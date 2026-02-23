@@ -364,6 +364,76 @@ body::after {
 .section:nth-child(3) { animation: fadeSlideIn 0.5s ease both 0.3s; }
 .section:nth-child(4) { animation: fadeSlideIn 0.5s ease both 0.4s; }
 
+/* ── Privacy / Prose ── */
+.page-title {
+  font-family: 'Source Sans 3', 'Noto Sans JP', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: #64748b;
+  text-decoration: none;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: #94a3b8;
+}
+
+.prose {
+  font-family: 'Source Sans 3', 'Noto Sans JP', sans-serif;
+  font-size: 15px;
+  color: #cbd5e1;
+  line-height: 1.85;
+}
+
+.prose h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #e2e8f0;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+.prose p {
+  margin-bottom: 16px;
+}
+
+.prose a {
+  color: #38bdf8;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+
+.prose a:hover {
+  color: #7dd3fc;
+}
+
+.footer-links {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #64748b;
+}
+
 @media (max-width: 480px) {
   .container { padding: 40px 16px 32px; }
   .header-name { font-size: 24px; }
@@ -466,7 +536,66 @@ function renderPage(): string {
 
     <footer class="footer">
       <span>&copy; 2026 kiakiraki</span>
-      <span>Powered by Cloudflare Workers</span>
+      <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+        <span>Powered by Cloudflare Workers</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>`;
+}
+
+function renderPrivacyPage(): string {
+  return `<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー - ${escapeHtml(SITE_META.name)}</title>
+
+  <meta name="description" content="kiakiraki.dev のプライバシーポリシー">
+  <meta name="robots" content="noindex">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap">
+
+  <style>${getStyles()}</style>
+</head>
+<body>
+  <div class="orb-purple"></div>
+  <div class="container" style="animation: fadeSlideIn 0.5s ease both;">
+    <a href="/" class="back-link">&larr; トップページに戻る</a>
+    <h1 class="page-title">プライバシーポリシー</h1>
+
+    <div class="prose">
+      <p>当サイト（kiakiraki.dev、以下「当サイト」）では、第三者配信の広告サービスとしてGoogle AdSense（グーグルアドセンス）を利用しています。以下に、当サイトにおける広告配信やデータの取り扱いについて説明いたします。</p>
+
+      <h2>広告配信について</h2>
+      <p>当サイトでは、Googleおよび第三者配信事業者がCookie（クッキー）を使用して広告を配信しています。Cookieとは、ウェブサイトがブラウザに保存する小さなデータファイルで、サイトの利便性向上や広告の最適化に使用されます。</p>
+
+      <h2>パーソナライズド広告について</h2>
+      <p>Googleは、ユーザーが当サイトや他のウェブサイトに過去にアクセスした際の情報に基づいて、興味や関心に合わせた広告（パーソナライズド広告）を表示することがあります。</p>
+
+      <h2>オプトアウト（無効化）について</h2>
+      <p>パーソナライズド広告の表示を希望されない場合は、<a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Googleの広告設定ページ</a>から無効化することができます。また、<a href="https://www.aboutads.info/choices/" target="_blank" rel="noopener noreferrer">aboutads.info</a>のページにアクセスすることで、第三者配信事業者によるパーソナライズド広告用のCookieを無効化することも可能です。</p>
+
+      <h2>詳細情報</h2>
+      <p>Googleによる広告配信の仕組みやデータの取り扱いについては、<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google ポリシーと規約</a>をご確認ください。</p>
+
+      <h2>お問い合わせ</h2>
+      <p>当サイトのプライバシーポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。</p>
+      <p>メール: <a href="mailto:jas39.gripen@gmail.com">jas39.gripen@gmail.com</a></p>
+    </div>
+
+    <footer class="footer">
+      <span>&copy; 2026 kiakiraki</span>
+      <div class="footer-links">
+        <a href="/privacy">Privacy Policy</a>
+        <span>Powered by Cloudflare Workers</span>
+      </div>
     </footer>
   </div>
 </body>
@@ -485,7 +614,15 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    const html = renderPage();
+    const path = url.pathname;
+    let html: string;
+
+    if (path === "/privacy") {
+      html = renderPrivacyPage();
+    } else {
+      html = renderPage();
+    }
+
     return new Response(html, {
       status: 200,
       headers: {
