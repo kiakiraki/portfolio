@@ -514,6 +514,9 @@ function renderPage(): string {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap">
 
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9612045894782550" crossorigin="anonymous"></script>
+
   <style>${getStyles()}</style>
 </head>
 <body>
@@ -561,6 +564,9 @@ function renderPrivacyPage(): string {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Source+Sans+3:wght@400;600&family=Noto+Sans+JP:wght@400;500&display=swap">
+
+  <!-- Google AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9612045894782550" crossorigin="anonymous"></script>
 
   <style>${getStyles()}</style>
 </head>
