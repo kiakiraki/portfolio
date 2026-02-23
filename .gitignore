@@ -158,6 +158,10 @@ dist
 .yarn/install-state.gz
 .pnp.\*
 
+# IDE
+.vscode/
+.idea/
+
 # wrangler project
 
 .dev.vars*
