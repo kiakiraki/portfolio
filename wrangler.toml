@@ -1,0 +1,11 @@
+name = "portfolio"
+main = "src/index.ts"
+compatibility_date = "2025-02-01"
+
+routes = [
+  { pattern = "kiakiraki.dev", custom_domain = true },
+  { pattern = "www.kiakiraki.dev", custom_domain = true }
+]
+
+[assets]
+directory = "./public"
