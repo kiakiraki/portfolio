@@ -62,6 +62,7 @@ const SECTIONS: Section[] = [
       { iconLabel: "C", title: "cnsr", description: "Image mosaic & redaction tool", url: "https://cnsr.kiakiraki.dev", techTag: "Cloudflare Pages" },
       { iconLabel: "M", title: "metamark", description: "EXIF metadata overlay for photos", url: "https://metamark.kiakiraki.dev", techTag: "Cloudflare Workers" },
       { iconLabel: "CJ", title: "cyber-japanese-news", description: "Cyberpunk Japan news mapper", url: "https://github.com/kiakiraki/cyber-japanese-news", techTag: "Local / React" },
+      { iconLabel: "ZG", title: "zatsudan-gacha", description: "Workplace icebreaker topic picker", url: "https://zatsudan-gacha.kiakiraki.workers.dev", techTag: "Cloudflare Workers" },
     ],
   },
   {
@@ -88,6 +89,7 @@ const ICON_COLORS: Record<string, { bg: string; fg: string }> = {
   Fy: { bg: "rgba(52,211,153,0.12)", fg: "#34d399" },
   m2: { bg: "rgba(251,191,36,0.12)", fg: "#fbbf24" },
   Se: { bg: "rgba(248,113,113,0.12)", fg: "#f87171" },
+  ZG: { bg: "rgba(236,72,153,0.12)", fg: "#ec4899" },
 };
 
 // ─── CSS ─────────────────────────────────────────────────────────────────────
