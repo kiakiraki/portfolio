@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# 同一ブランチへの連続 push で古い実行をキャンセルする
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Type check
+        run: npm run type-check
+
+      # tsc は型しか見ないので、esbuild でのバンドル自体が壊れていないかも確認する。
+      # --dry-run はローカルビルドのみで、Cloudflare の認証情報を必要としない。
+      - name: Build check
+        run: npx wrangler deploy --dry-run
+        env:
+          WRANGLER_SEND_METRICS: false
